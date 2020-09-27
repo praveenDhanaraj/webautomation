@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="10" name="Regression Test">
+	<test thread-count="10" name="Products Test" parallel="methods">
+		<packages>
+			<package name="com.flipkart.webautomation.tests" />
+		</packages>
+	</test> <!-- Products Test -->
+</suite> <!-- Regression Test -->
