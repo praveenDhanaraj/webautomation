@@ -13,10 +13,7 @@ Prerequisites:
 - Apache Maven
 
 Steps for execution:
-1. Clone the project (Or download and unzip the project file)
-```sh
-$ git clone git@github.com:xyz/gotest.git
-```
+1. Download and unzip the project file
 2. Go to the project directory via terminal
 3. Run the following command:
 ```sh
