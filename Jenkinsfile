@@ -40,7 +40,7 @@ stages {
                 if ("$build" == "yes") {
                sh """
                 cd devsecopscodebase/
-                    mvn clean test
+                mvn clean test -Dbrowser=firefox -Dgroups=regression
                    """
             }
                  else {
