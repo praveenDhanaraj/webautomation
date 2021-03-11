@@ -47,23 +47,8 @@ public class ExtentReportsListener implements ITestListener {
 		@Override
 		public synchronized void onTestFailure(ITestResult result) {
 			System.out.println((result.getMethod().getMethodName() + " failed!"));
+			test.get().log(Status.FAIL, result.getThrowable());
 
-			try {
-				TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
-
-				// Call method to capture screenshot
-				File source = ts.getScreenshotAs(OutputType.FILE);
-				String filepath = System.getProperty("user.dir") + "/TestReport/FailuresScreens/" + result.getTestClass()
-						+ "/" + result.getName() + ".png";
-				FileUtils.copyFile(source, new File(filepath));
-
-				test.get().addScreenCaptureFromPath(filepath);
-				test.get().log(Status.FAIL, result.getThrowable());
-
-			} catch (Exception e) {
-
-				System.out.println("Exception while taking screenshot " + e.getMessage());
-			} 
 		}
 
 		@Override
